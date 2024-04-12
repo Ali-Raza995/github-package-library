@@ -1,2 +1,3 @@
 import ButtonComponent from "./components/button";
-export { ButtonComponent}
+import MaterialButton from "./components/materialButton";
+export { ButtonComponent, MaterialButton}
