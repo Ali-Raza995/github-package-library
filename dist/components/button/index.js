@@ -18,11 +18,11 @@ const ButtonComponent = _ref => {
     flexDirection: "column",
     gap: "30px",
     alignItems: "center"
-  }, /*#__PURE__*/_react.default.createElement(_material.Button, {
+  }, /*#__PURE__*/_react.default.createElement("button", {
     sx: {
       backgroundColor: bgColor,
       color: textColor
     }
-  }, "Material UI Button with color prop ", bgColor, " and btn text ", btnText), /*#__PURE__*/_react.default.createElement(_material.Typography, null, "Hello fro typography"), /*#__PURE__*/_react.default.createElement("p", null, "Component testing"));
+  }, "Simple button UI Button with color prop ", bgColor, " and btn text ", btnText), /*#__PURE__*/_react.default.createElement(_material.Typography, null, "Hello fro typography"), /*#__PURE__*/_react.default.createElement("p", null, "Component testing"));
 };
 var _default = exports.default = ButtonComponent;

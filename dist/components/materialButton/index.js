@@ -13,8 +13,8 @@ const MaterialButton = _ref => {
   } = _ref;
   return /*#__PURE__*/_react.default.createElement(_material.Button, {
     sx: {
-      backgroundClip: bgColor
+      backgroundColor: bgColor
     }
-  }, "MaterialButton");
+  }, "Material UI Button with color prop ", bgColor);
 };
 var _default = exports.default = MaterialButton;
