@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 
 const MaterialButton = ({bgColor="green"}) => {
   return (
-    <Button sx={{backgroundClip:bgColor}}>MaterialButton</Button>
+    <Button sx={{backgroundColor:bgColor}}>Material UI Button with color prop {bgColor}</Button>
   )
 }
 
