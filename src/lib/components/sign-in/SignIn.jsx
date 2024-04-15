@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Loader from "react-loader-spinner";
 import * as Styles from "./SignIn.style";
@@ -33,7 +33,6 @@ const SignIn = ({ handleSubmit, loginResult, severity, title ="ServerPoint's por
   };
 
   return (
-    <>
       <Styles.BgLogin>
         <Styles.LoginContainer>
           <Styles.Logo>
@@ -109,7 +108,6 @@ const SignIn = ({ handleSubmit, loginResult, severity, title ="ServerPoint's por
           </Styles.LoginBox>
         </Styles.LoginContainer>
       </Styles.BgLogin>
-    </>
   );
 };
 
