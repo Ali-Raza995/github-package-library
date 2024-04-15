@@ -1,0 +1,14 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="220" height="220">
+	<title>
+		portal-client_login_rev05
+	</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff;stroke: #ff7300 }
+		.shp1 { fill: #ff7800 }
+	</style>
+	<g id="remember me">
+		<path id="Rectangle 649" class="shp0" d="M7 7L18 7C19.66 7 21 8.34 21 10L21 21C21 22.66 19.66 24 18 24L7 24C5.34 24 4 22.66 4 21L4 10C4 8.34 5.34 7 7 7Z" />
+		<path id="Check icon" class="shp1" d="M6.94 13.06L9.06 10.94L16.06 17.94L13.94 20.06L6.94 13.06ZM14.06 20.06L11.94 17.94L24.94 4.94L27.06 7.06L14.06 20.06Z" />
+	</g>
+</svg>
