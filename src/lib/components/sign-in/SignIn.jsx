@@ -8,7 +8,7 @@ import Checkbox from "../common/checkbox/Checkbox";
 import Input from "../common/input";
 import LanguageDropdown from "../language-dropdown/LanguageDropdown";
 
-const SignIn = ({ handleSubmit, loginResult, severity, title ="ServerPoint's portal", loginIsLoading}) => {
+const SignIn = ({ handleSubmit, loginResult, severity, title ="ServerPoint's portal", loginIsLoading = false}) => {
   const { t, i18n } = useTranslation();
   const obj = localStorage.getItem("remember");
   let email = "";
@@ -84,7 +84,6 @@ const SignIn = ({ handleSubmit, loginResult, severity, title ="ServerPoint's por
                   />
                 </Styles.SubmitForm>
                 <Styles.Button type="submit">
-                  loginIsLoading
                   {loginIsLoading ? (
                     <Loader
                       style={{ display: "inline", marginRight: "5px" }}
