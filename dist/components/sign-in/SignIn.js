@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _reactI18next = require("react-i18next");
 var _reactLoaderSpinner = _interopRequireDefault(require("react-loader-spinner"));
 var Styles = _interopRequireWildcard(require("./SignIn.style"));
@@ -15,17 +15,19 @@ var _alert = _interopRequireDefault(require("../common/alert"));
 var _Checkbox = _interopRequireDefault(require("../common/checkbox/Checkbox"));
 var _input = _interopRequireDefault(require("../common/input"));
 var _LanguageDropdown = _interopRequireDefault(require("../language-dropdown/LanguageDropdown"));
+var _reactRouterDom = require("react-router-dom");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const SignIn = _ref => {
-  let {
+const SignIn = props => {
+  const {
     handleSubmit,
     loginResult,
     severity,
     title = "ServerPoint's portal",
-    loginIsLoading = false
-  } = _ref;
+    loginIsLoading = false,
+    mode = "admin"
+  } = props;
   const {
     t,
     i18n
@@ -50,18 +52,18 @@ const SignIn = _ref => {
     setLanguage(value);
     i18n.changeLanguage(value);
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Styles.BgLogin, null, /*#__PURE__*/React.createElement(Styles.LoginContainer, null, /*#__PURE__*/React.createElement(Styles.Logo, null, /*#__PURE__*/React.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement(Styles.BgLogin, null, /*#__PURE__*/_react.default.createElement(Styles.LoginContainer, null, /*#__PURE__*/_react.default.createElement(Styles.Logo, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _serverpoint.default,
     alt: "serverpoint",
     width: "100%"
-  })), /*#__PURE__*/React.createElement(Styles.LoginBox, null, /*#__PURE__*/React.createElement(_alert.default, {
+  })), /*#__PURE__*/_react.default.createElement(Styles.LoginBox, null, /*#__PURE__*/_react.default.createElement(_alert.default, {
     severity: severity === "error" ? "error" : "info",
     text: t(loginResult),
     open: open,
     handleClose: () => setOpen(false)
-  }), /*#__PURE__*/React.createElement(Styles.LoginForm, null, /*#__PURE__*/React.createElement(Styles.Heading, null, t("".concat(title))), /*#__PURE__*/React.createElement("form", {
+  }), /*#__PURE__*/_react.default.createElement(Styles.LoginForm, null, /*#__PURE__*/_react.default.createElement(Styles.Heading, null, t("".concat(title))), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/React.createElement(_input.default, {
+  }, /*#__PURE__*/_react.default.createElement(_input.default, {
     type: "text",
     name: "name",
     value: userName,
@@ -73,7 +75,7 @@ const SignIn = _ref => {
       setUserName(e.target.value);
     },
     isFormIk: false
-  }), /*#__PURE__*/React.createElement(_input.default, {
+  }), /*#__PURE__*/_react.default.createElement(_input.default, {
     type: "password",
     name: "password",
     value: password,
@@ -85,14 +87,22 @@ const SignIn = _ref => {
       setPassword(e.target.value);
     },
     isFormIk: false
-  }), /*#__PURE__*/React.createElement(Styles.SubmitForm, null, /*#__PURE__*/React.createElement(_Checkbox.default, {
+  }), /*#__PURE__*/_react.default.createElement(Styles.SubmitForm, {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "20px"
+    }
+  }, /*#__PURE__*/_react.default.createElement(_Checkbox.default, {
     id: "check",
     title: "Remember my username",
     value: isRememberPassword,
     setValue: setIsRememberPassword
-  })), /*#__PURE__*/React.createElement(Styles.Button, {
+  }), mode === "client" && /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/forgot-password"
+  }, t("Forgot Password")))), /*#__PURE__*/_react.default.createElement(Styles.Button, {
     type: "submit"
-  }, loginIsLoading ? /*#__PURE__*/React.createElement(_reactLoaderSpinner.default, {
+  }, loginIsLoading ? /*#__PURE__*/_react.default.createElement(_reactLoaderSpinner.default, {
     style: {
       display: "inline",
       marginRight: "5px"
@@ -102,13 +112,21 @@ const SignIn = _ref => {
     height: 24,
     width: 24,
     radius: 4
-  }) : null, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+  }) : null, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("span", {
     style: {
       fontWeight: "bolder"
     }
-  }, "Sign In")))), /*#__PURE__*/React.createElement(Styles.Bottom, null, /*#__PURE__*/React.createElement(_LanguageDropdown.default, {
+  }, "Log In")))), /*#__PURE__*/_react.default.createElement(Styles.Bottom, {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: "20px"
+    }
+  }, /*#__PURE__*/_react.default.createElement(_LanguageDropdown.default, {
     language: language,
     handleLanguage: e => _handleLanguage(e)
-  })))))));
+  }), mode === "client" && /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/signup"
+  }, t("Sign up free"))))))));
 };
 var _default = exports.default = SignIn;

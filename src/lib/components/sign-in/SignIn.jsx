@@ -16,9 +16,9 @@ const SignIn = (props) => {
     severity,
     title = "ServerPoint's portal",
     loginIsLoading = false,
-    mode = "admin",
   } = props;
   const { t, i18n } = useTranslation();
+  const isAdmin = title?.includes("Admin")
   const obj = localStorage.getItem("remember");
   let email = "";
 
@@ -92,7 +92,7 @@ const SignIn = (props) => {
                   value={isRememberPassword}
                   setValue={setIsRememberPassword}
                 />
-                {mode === "client" && (
+                {!isAdmin && (
                   <Styles.Forgot>
                     <Link to="/forgot-password">{t("Forgot Password")}</Link>
                   </Styles.Forgot>
@@ -121,7 +121,7 @@ const SignIn = (props) => {
                 language={language}
                 handleLanguage={(e) => handleLanguage(e)}
               />
-              {mode === "client" && (
+              {!isAdmin && (
                 <Styles.SignUp>
                   <Link to="/signup">{t("Sign up free")}</Link>
                 </Styles.SignUp>
