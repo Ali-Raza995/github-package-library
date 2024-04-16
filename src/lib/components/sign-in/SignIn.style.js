@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 // import BackgroundImage from '../../assets/svg/bgloginportalclientgrey.svg';
-import { h4Styles } from '../../utils/resuable-css';
+import { h4Styles, h6Styles, pStyles } from "../../utils/resuable-css";
 
 export const BgLogin = styled.div`
   background-size: cover;
@@ -36,6 +36,16 @@ export const LoginBox = styled.div`
 
 export const LoginForm = styled.div`
   padding: 40px 30px;
+`;
+
+export const Forgot = styled.div`
+  text-decoration: underline;
+  font-size: ${(props) => props.theme.default?.p};
+  ${(props) => pStyles(props.theme.resolutions)};
+  color: #ff7300;
+  a {
+    color: #ff7300;
+  }
 `;
 
 export const Logo = styled.p`
@@ -119,4 +129,15 @@ export const Bottom = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2em;
+`;
+
+export const SignUp = styled.div`
+  font-size: ${(props) => props.theme.default?.h6};
+  ${(props) => h6Styles(props.theme.resolutions)};
+  font-weight: bold;
+  color: #ff7300;
+  text-decoration: underline;
+  a {
+    color: #ff7300;
+  }
 `;
