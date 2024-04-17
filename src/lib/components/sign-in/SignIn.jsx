@@ -16,11 +16,14 @@ const SignIn = (props) => {
     severity,
     title = "ServerPoint's portal",
     loginIsLoading = false,
-    mode
+    open,
+    setOpen,
+    mode,
   } = props;
   console.log("loginResult", loginResult)
   console.log("severity", severity)
   console.log("mode", mode)
+  console.log("open", open)
   const { t, i18n } = useTranslation();
   const isAdmin = title?.includes("Admin")
   const obj = localStorage.getItem("remember");
@@ -37,7 +40,6 @@ const SignIn = (props) => {
   const [language, setLanguage] = useState(defaultLang);
   const [userName, setUserName] = useState(email);
   const [password, setPassword] = useState("");
-  const [open, setOpen] = useState(false);
   const [isRememberPassword, setIsRememberPassword] = useState(email && true);
 
   const handleLanguage = (value) => {

@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+require("core-js/modules/es.array.includes.js");
+require("core-js/modules/es.string.includes.js");
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = _interopRequireWildcard(require("react"));
 var _reactI18next = require("react-i18next");
@@ -26,12 +28,16 @@ const SignIn = props => {
     severity,
     title = "ServerPoint's portal",
     loginIsLoading = false,
-    mode = "admin"
+    mode
   } = props;
+  console.log("loginResult", loginResult);
+  console.log("severity", severity);
+  console.log("mode", mode);
   const {
     t,
     i18n
   } = (0, _reactI18next.useTranslation)();
+  const isAdmin = title === null || title === void 0 ? void 0 : title.includes("Admin");
   const obj = localStorage.getItem("remember");
   let email = "";
   if (obj) {
@@ -98,7 +104,7 @@ const SignIn = props => {
     title: "Remember my username",
     value: isRememberPassword,
     setValue: setIsRememberPassword
-  }), mode === "client" && /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }), !isAdmin && /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/forgot-password"
   }, t("Forgot Password")))), /*#__PURE__*/_react.default.createElement(Styles.Button, {
     type: "submit"
@@ -125,7 +131,7 @@ const SignIn = props => {
   }, /*#__PURE__*/_react.default.createElement(_LanguageDropdown.default, {
     language: language,
     handleLanguage: e => _handleLanguage(e)
-  }), mode === "client" && /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }), !isAdmin && /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/signup"
   }, t("Sign up free"))))))));
 };
