@@ -16,7 +16,11 @@ const SignIn = (props) => {
     severity,
     title = "ServerPoint's portal",
     loginIsLoading = false,
+    mode
   } = props;
+  console.log("loginResult", loginResult)
+  console.log("severity", severity)
+  console.log("mode", mode)
   const { t, i18n } = useTranslation();
   const isAdmin = title?.includes("Admin")
   const obj = localStorage.getItem("remember");
