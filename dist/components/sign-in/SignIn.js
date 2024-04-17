@@ -28,11 +28,14 @@ const SignIn = props => {
     severity,
     title = "ServerPoint's portal",
     loginIsLoading = false,
+    open,
+    setOpen,
     mode
   } = props;
   console.log("loginResult", loginResult);
   console.log("severity", severity);
   console.log("mode", mode);
+  console.log("open", open);
   const {
     t,
     i18n
@@ -52,7 +55,6 @@ const SignIn = props => {
   const [language, setLanguage] = (0, _react.useState)(defaultLang);
   const [userName, setUserName] = (0, _react.useState)(email);
   const [password, setPassword] = (0, _react.useState)("");
-  const [open, setOpen] = (0, _react.useState)(false);
   const [isRememberPassword, setIsRememberPassword] = (0, _react.useState)(email && true);
   const _handleLanguage = value => {
     setLanguage(value);
