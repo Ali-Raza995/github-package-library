@@ -7,7 +7,6 @@ import Alert from "../common/alert";
 import Checkbox from "../common/checkbox/Checkbox";
 import Input from "../common/input";
 import LanguageDropdown from "../language-dropdown/LanguageDropdown";
-import { Link } from "react-router-dom";
 
 const SignIn = (props) => {
   const {
@@ -100,7 +99,7 @@ const SignIn = (props) => {
                 />
                 {!isAdmin && (
                   <Styles.Forgot>
-                    <Link to="/forgot-password">{t("Forgot Password")}</Link>
+                    <a href="/forgot-password">{t("Forgot Password")}</a>
                   </Styles.Forgot>
                 )}
               </Styles.SubmitForm>
@@ -129,7 +128,7 @@ const SignIn = (props) => {
               />
               {!isAdmin && (
                 <Styles.SignUp>
-                  <Link to="/signup">{t("Sign up free")}</Link>
+                  <a href="/signup">{t("Sign up free")}</a>
                 </Styles.SignUp>
               )}
             </Styles.Bottom>
