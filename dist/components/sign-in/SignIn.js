@@ -17,7 +17,6 @@ var _alert = _interopRequireDefault(require("../common/alert"));
 var _Checkbox = _interopRequireDefault(require("../common/checkbox/Checkbox"));
 var _input = _interopRequireDefault(require("../common/input"));
 var _LanguageDropdown = _interopRequireDefault(require("../language-dropdown/LanguageDropdown"));
-var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
@@ -103,8 +102,8 @@ const SignIn = props => {
     value: isRememberPassword,
     setValue: setIsRememberPassword,
     remember: isRememberPassword
-  })), /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/forgot-password"
+  })), /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/forgot-password"
   }, t('signin.string5')))), /*#__PURE__*/_react.default.createElement(Styles.LoginButton, null, /*#__PURE__*/_react.default.createElement(Styles.Button, null, loginIsLoading ? /*#__PURE__*/_react.default.createElement(_reactLoaderSpinner.default, {
     style: {
       display: 'inline'
@@ -121,8 +120,8 @@ const SignIn = props => {
   }, " ", t('signin.string6')))))), /*#__PURE__*/_react.default.createElement(Styles.Bottom, null, /*#__PURE__*/_react.default.createElement(_LanguageDropdown.default, {
     language: language,
     handleLanguage: e => _handleLanguage(e)
-  }), /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/signup"
+  }), /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/signup"
   }, t('signin.string7')))))))));
 };
 var _default = exports.default = SignIn;
