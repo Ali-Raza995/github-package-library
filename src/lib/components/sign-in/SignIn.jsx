@@ -18,6 +18,14 @@ const SignIn = (props) => {
     open,
     setOpen,
     mode,
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    isRememberPassword,
+    setIsRememberPassword,
+    language,
+    setLanguage
   } = props;
   console.log("loginResult", loginResult)
   console.log("severity", severity)
@@ -33,13 +41,7 @@ const SignIn = (props) => {
     email = e;
   }
 
-  let defaultLang = i18n.language === "en-US" ? "en" : i18n.language;
-  // let defaultLang = i18n.language === 'en-US' ? 'en' : "EN English";
-  console.log("defaultLang", defaultLang);
-  const [language, setLanguage] = useState(defaultLang);
-  const [userName, setUserName] = useState(email);
-  const [password, setPassword] = useState("");
-  const [isRememberPassword, setIsRememberPassword] = useState(email && true);
+
 
   const handleLanguage = (value) => {
     setLanguage(value);
