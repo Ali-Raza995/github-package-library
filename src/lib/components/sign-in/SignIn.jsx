@@ -60,80 +60,82 @@ const SignIn = (props) => {
             open={open}
             handleClose={() => setOpen(false)}
           />
-          <Styles.LoginForm>
-            <Styles.Heading>{t(`${title}`)}</Styles.Heading>
-            <form onSubmit={handleSubmit}>
-              <Input
-                type="text"
-                name={"name"}
-                value={userName}
-                placeholder="Username or email address"
-                onKeyPress={(e) => {
-                  e.target.keyCode === 13 && e.preventDefault();
-                }}
-                onChange={(e) => {
-                  setUserName(e.target.value);
-                }}
-                isFormIk={false}
-              />
-              <Input
-                type="password"
-                name={"password"}
-                value={password}
-                placeholder="Password"
-                onKeyPress={(e) => {
-                  e.target.keyCode === 13 && e.preventDefault();
-                }}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-                isFormIk={false}
-              />
-              <Styles.SubmitForm
-                style={{ display: "flex", alignItems: "center", gap: "20px" }}
-              >
-                <Checkbox
-                  id="check"
-                  title="Remember my username"
-                  value={isRememberPassword}
-                  setValue={setIsRememberPassword}
-                />
-                {!isAdmin && (
-                  <Styles.Forgot>
-                    <Link to="/forgot-password">{t("Forgot Password")}</Link>
-                  </Styles.Forgot>
-                )}
-              </Styles.SubmitForm>
-              <Styles.Button type="submit">
-                {loginIsLoading ? (
-                  <Loader
-                    style={{ display: "inline", marginRight: "5px" }}
-                    type="ThreeDots"
-                    color="#fff"
-                    height={24}
-                    width={24}
-                    radius={4}
+            <Styles.LoginForm>
+              <Styles.Heading>{t(`${title}`)}</Styles.Heading>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <Input
+                    type="text"
+                    name={'name'}
+                    value={userName}
+                    placeholder={t('signin.string2')}
+                    onKeyPress={(e) => {
+                      e.target.keyCode === 13 && e.preventDefault();
+                    }}
+                    onChange={(e) => {
+                      setUserName(e.target.value);
+                    }}
+                    isFormIk={false}
+                    autocomplete="username"
                   />
-                ) : null}
-                <span>
-                  <span style={{ fontWeight: "bolder" }}>Log In</span>
-                </span>
-              </Styles.Button>
-            </form>
-            <Styles.Bottom
-              style={{ display: "flex", alignItems: "center", gap: "20px" }}
-            >
-              <LanguageDropdown
-                language={language}
-                handleLanguage={(e) => handleLanguage(e)}
-              />
-              {!isAdmin && (
-                <Styles.SignUp>
-                  <Link to="/signup">{t("Sign up free")}</Link>
-                </Styles.SignUp>
-              )}
-            </Styles.Bottom>
-          </Styles.LoginForm>
+                </div>
+                <div>
+                  <Input
+                    type="password"
+                    name={'password'}
+                    value={password}
+                    placeholder={t('signin.string3')}
+                    onKeyPress={(e) => {
+                      e.target.keyCode === 13 && e.preventDefault();
+                    }}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    isFormIk={false}
+                    autocomplete="current-password"
+                  />
+                </div>
+                <div>
+                  <Styles.SubmitForm>
+                    <Styles.Remember>
+                      <Checkbox
+                        id="check"
+                        title="signin.string4"
+                        value={isRememberPassword}
+                        setValue={setIsRememberPassword}
+                        remember={isRememberPassword}
+                      />
+                    </Styles.Remember>
+                    <Styles.Forgot>
+                      <Link to="/forgot-password">{t('signin.string5')}</Link>
+                    </Styles.Forgot>
+                  </Styles.SubmitForm>
+                  <Styles.LoginButton>
+                    <Styles.Button>
+                      {loginIsLoading  ? (
+                        <Loader
+                          style={{ display: 'inline' }}
+                          type="ThreeDots"
+                          color="#fff"
+                          height={24}
+                          width={24}
+                          radius={4}
+                        />
+                      ) : null}
+                      <span>
+                        <span style={{ fontWeight: 'bolder' }}> {t('signin.string6')}</span>
+                      </span>
+                    </Styles.Button>
+                  </Styles.LoginButton>
+                </div>
+                <Styles.Bottom>
+                  <LanguageDropdown language={language} handleLanguage={(e) => handleLanguage(e)} />
+                  <Styles.SignUp>
+                    <Link to="/signup">{t('signin.string7')}</Link>
+                  </Styles.SignUp>
+                </Styles.Bottom>
+              </form>
+            </Styles.LoginForm>
         </Styles.LoginBox>
       </Styles.LoginContainer>
     </Styles.BgLogin>
