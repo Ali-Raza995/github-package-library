@@ -43,7 +43,7 @@ const SignIn = (props) => {
 
   const handleLanguage = (value) => {
     setLanguage(value);
-    i18n.changeLanguage(value);
+    i18n?.changeLanguage(value);
   };
 
   return (
