@@ -71,49 +71,43 @@ const SignIn = props => {
     handleClose: () => setOpen(false)
   }), /*#__PURE__*/_react.default.createElement(Styles.LoginForm, null, /*#__PURE__*/_react.default.createElement(Styles.Heading, null, t("".concat(title))), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: handleSubmit
-  }, /*#__PURE__*/_react.default.createElement(_input.default, {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_input.default, {
     type: "text",
-    name: "name",
+    name: 'name',
     value: userName,
-    placeholder: "Username or email address",
+    placeholder: t('signin.string2'),
     onKeyPress: e => {
       e.target.keyCode === 13 && e.preventDefault();
     },
     onChange: e => {
       setUserName(e.target.value);
     },
-    isFormIk: false
-  }), /*#__PURE__*/_react.default.createElement(_input.default, {
+    isFormIk: false,
+    autocomplete: "username"
+  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_input.default, {
     type: "password",
-    name: "password",
+    name: 'password',
     value: password,
-    placeholder: "Password",
+    placeholder: t('signin.string3'),
     onKeyPress: e => {
       e.target.keyCode === 13 && e.preventDefault();
     },
     onChange: e => {
       setPassword(e.target.value);
     },
-    isFormIk: false
-  }), /*#__PURE__*/_react.default.createElement(Styles.SubmitForm, {
-    style: {
-      display: "flex",
-      alignItems: "center",
-      gap: "20px"
-    }
-  }, /*#__PURE__*/_react.default.createElement(_Checkbox.default, {
+    isFormIk: false,
+    autocomplete: "current-password"
+  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(Styles.SubmitForm, null, /*#__PURE__*/_react.default.createElement(Styles.Remember, null, /*#__PURE__*/_react.default.createElement(_Checkbox.default, {
     id: "check",
-    title: "Remember my username",
+    title: "signin.string4",
     value: isRememberPassword,
-    setValue: setIsRememberPassword
-  }), !isAdmin && /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    setValue: setIsRememberPassword,
+    remember: isRememberPassword
+  })), /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/forgot-password"
-  }, t("Forgot Password")))), /*#__PURE__*/_react.default.createElement(Styles.Button, {
-    type: "submit"
-  }, loginIsLoading ? /*#__PURE__*/_react.default.createElement(_reactLoaderSpinner.default, {
+  }, t('signin.string5')))), /*#__PURE__*/_react.default.createElement(Styles.LoginButton, null, /*#__PURE__*/_react.default.createElement(Styles.Button, null, loginIsLoading ? /*#__PURE__*/_react.default.createElement(_reactLoaderSpinner.default, {
     style: {
-      display: "inline",
-      marginRight: "5px"
+      display: 'inline'
     },
     type: "ThreeDots",
     color: "#fff",
@@ -122,19 +116,13 @@ const SignIn = props => {
     radius: 4
   }) : null, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("span", {
     style: {
-      fontWeight: "bolder"
+      fontWeight: 'bolder'
     }
-  }, "Log In")))), /*#__PURE__*/_react.default.createElement(Styles.Bottom, {
-    style: {
-      display: "flex",
-      alignItems: "center",
-      gap: "20px"
-    }
-  }, /*#__PURE__*/_react.default.createElement(_LanguageDropdown.default, {
+  }, " ", t('signin.string6')))))), /*#__PURE__*/_react.default.createElement(Styles.Bottom, null, /*#__PURE__*/_react.default.createElement(_LanguageDropdown.default, {
     language: language,
     handleLanguage: e => _handleLanguage(e)
-  }), !isAdmin && /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }), /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/signup"
-  }, t("Sign up free"))))))));
+  }, t('signin.string7')))))))));
 };
 var _default = exports.default = SignIn;
