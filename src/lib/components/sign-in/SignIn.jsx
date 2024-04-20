@@ -99,7 +99,7 @@ const SignIn = (props) => {
                 />
                 {!isAdmin && (
                   <Styles.Forgot>
-                    <a href="/forgot-password">{t("Forgot Password")}</a>
+                    <a href="/#/forgot-password">{t("Forgot Password")}</a>
                   </Styles.Forgot>
                 )}
               </Styles.SubmitForm>
@@ -128,7 +128,7 @@ const SignIn = (props) => {
               />
               {!isAdmin && (
                 <Styles.SignUp>
-                  <a href="/signup">{t("Sign up free")}</a>
+                  <a href="/#/signup">{t("Sign up free")}</a>
                 </Styles.SignUp>
               )}
             </Styles.Bottom>
