@@ -26,7 +26,7 @@ const SignIn = (props) => {
   const { t, i18n } = useTranslation();
   const isAdmin = title?.includes("Admin")
   const obj = localStorage.getItem("remember");
-  let email = "";
+  let email = "lvp11316";
 
   if (obj) {
     const { email: e } = JSON.parse(obj);

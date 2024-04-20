@@ -57,7 +57,7 @@ const SignIn = props => {
   const [isRememberPassword, setIsRememberPassword] = (0, _react.useState)(email && true);
   const _handleLanguage = value => {
     setLanguage(value);
-    i18n.changeLanguage(value);
+    i18n === null || i18n === void 0 || i18n.changeLanguage(value);
   };
   return /*#__PURE__*/_react.default.createElement(Styles.BgLogin, null, /*#__PURE__*/_react.default.createElement(Styles.LoginContainer, null, /*#__PURE__*/_react.default.createElement(Styles.Logo, null, /*#__PURE__*/_react.default.createElement("img", {
     src: _serverpoint.default,
@@ -106,7 +106,7 @@ const SignIn = props => {
     value: isRememberPassword,
     setValue: setIsRememberPassword
   }), !isAdmin && /*#__PURE__*/_react.default.createElement(Styles.Forgot, null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/forgot-password"
+    href: "/#/forgot-password"
   }, t("Forgot Password")))), /*#__PURE__*/_react.default.createElement(Styles.Button, {
     type: "submit"
   }, loginIsLoading ? /*#__PURE__*/_react.default.createElement(_reactLoaderSpinner.default, {
@@ -133,7 +133,7 @@ const SignIn = props => {
     language: language,
     handleLanguage: e => _handleLanguage(e)
   }), !isAdmin && /*#__PURE__*/_react.default.createElement(Styles.SignUp, null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "/signup"
+    href: "/#/signup"
   }, t("Sign up free"))))))));
 };
 var _default = exports.default = SignIn;
