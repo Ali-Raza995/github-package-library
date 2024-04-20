@@ -1,0 +1,149 @@
+.custom_input .MuiFilledInput-root {
+  width: 100% !important;
+  padding: 0px;
+  padding-left: 10px;
+  font-size: 15px;
+  margin: 0px;
+  display: inline-block;
+  padding-right: 35px;
+  border-radius: 8px;
+  outline: 0;
+  font-family: sans-serif;
+  background-color: white !important;
+}
+
+.custom_input .MuiFilledInput-root:focus {
+  background-color: #f0f0f0 !important;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 15px;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 15px;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 15px;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 15px;
+}
+
+.custom_input .MuiFilledInput-input {
+  padding: 9px;
+  margin: 0px;
+  padding-top: 19px;
+  padding-right: 0px;
+  padding-left: 0px;
+  overflow: hidden;
+}
+
+.custom_input .MuiFormLabel-root {
+  font-size: 13px;
+}
+
+.custom_input .MuiFormLabel-root.Mui-focused {
+  color: var(--primary-dark-color);
+}
+
+.custom_inputs .MuiFilledInput-root {
+  /* width: 100%; */
+  padding: 0px;
+  padding-left: 10px;
+  font-size: 15px;
+  margin: 0px;
+  display: inline-block;
+
+  border-radius: 8px !important;
+  outline: 0;
+  font-family: sans-serif;
+  background-color: white !important;
+}
+
+.custom_inputs .MuiFilledInput-root:focus {
+  background-color: #f0f0f0 !important;
+}
+
+.custom_inputs .MuiFilledInput-input {
+  padding: 9px;
+  margin: 0px;
+  padding-top: 19px;
+  padding-right: 0px;
+  padding-left: 0px;
+  overflow: hidden;
+}
+
+.no_placeholder .MuiFilledInput-input {
+  padding: 14px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.header_input_class .MuiFilledInput-input {
+  padding-top: 10px !important;
+  padding-bottom: 8px !important;
+}
+
+.custom_inputs .MuiFormLabel-root {
+  font-size: 13px;
+}
+
+.custom_inputs .MuiFormLabel-root.Mui-focused {
+  color: var(--primary-dark-color);
+}
+
+@media only screen and (min-width: 2000px) {
+  .custom_inputs {
+    width: 28rem;
+    /* color: #838282a2; */
+  }
+}
+
+.custom-text-field .MuiCircularProgress-root {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  margin-right: 15px;
+  color: orange;
+}
+
+.end-adornment {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  margin-right: 15px;
+}
+
+.custom-text-field .MuiFormControl-root {
+  width: 100%;
+}
+
+.opacity-3 {
+  opacity: 0.6 !important;
+  pointer-events: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+.error_messageSty {
+  color: white;
+  background-color: #d80000;
+  font-family: sans-serif;
+  padding: 0.2rem 0.5rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  float: right;
+}
