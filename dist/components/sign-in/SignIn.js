@@ -41,7 +41,7 @@ const SignIn = props => {
   } = (0, _reactI18next.useTranslation)();
   const isAdmin = title === null || title === void 0 ? void 0 : title.includes("Admin");
   const obj = localStorage.getItem("remember");
-  let email = "";
+  let email = "lvp11316";
   if (obj) {
     const {
       email: e
